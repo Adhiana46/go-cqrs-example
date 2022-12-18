@@ -7,8 +7,8 @@ import (
 )
 
 type Emitter struct {
-	topicName  string
-	connection *amqp.Connection
+	exchangeName string
+	connection   *amqp.Connection
 }
 
 func (e *Emitter) setup() error {
@@ -18,7 +18,7 @@ func (e *Emitter) setup() error {
 	}
 	defer ch.Close()
 
-	return declareExchange(ch, e.topicName)
+	return declareExchange(ch, e.exchangeName)
 }
 
 func (e *Emitter) Push(eventName string, data []byte) error {
@@ -28,15 +28,23 @@ func (e *Emitter) Push(eventName string, data []byte) error {
 	}
 	defer ch.Close()
 
-	log.Println("Push to channel", e.topicName, eventName)
+	// declare queue
+	queue, err := declareQueue(ch, e.exchangeName)
+	if err != nil {
+		return err
+	}
+
+	log.Printf("Push to channel E:%s -> R:%s -> Q:%s", e.exchangeName, eventName, queue.Name)
+
+	ch.QueueBind(queue.Name, eventName, e.exchangeName, false, nil)
 
 	err = ch.Publish(
-		e.topicName,
+		e.exchangeName,
 		eventName,
 		false,
 		false,
 		amqp.Publishing{
-			ContentType: "application/json",
+			ContentType: "text/plain",
 			Body:        data,
 		},
 	)
@@ -47,10 +55,10 @@ func (e *Emitter) Push(eventName string, data []byte) error {
 	return nil
 }
 
-func NewEventEmitter(conn *amqp.Connection, topicName string) (Emitter, error) {
+func NewEventEmitter(conn *amqp.Connection, exchangeName string) (Emitter, error) {
 	emitter := Emitter{
-		connection: conn,
-		topicName:  topicName,
+		connection:   conn,
+		exchangeName: exchangeName,
 	}
 
 	err := emitter.setup()
