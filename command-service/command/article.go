@@ -2,9 +2,11 @@ package command
 
 import (
 	"context"
+	"encoding/json"
 	"time"
 
 	"github.com/Adhiana46/command-service/dto"
+	"github.com/Adhiana46/command-service/event"
 	"github.com/Adhiana46/command-service/model"
 	sq "github.com/Masterminds/squirrel"
 	"github.com/go-playground/validator/v10"
@@ -20,6 +22,7 @@ const (
 )
 
 type ArticleCommand interface {
+	PushToQueue(ctx context.Context, eventName string, article *model.Article) error
 	Store(ctx context.Context, reqDto dto.RequestStoreArticle) (*model.Article, error)
 	Update(ctx context.Context, reqDto dto.RequestUpdateArticle) (*model.Article, error)
 	Delete(ctx context.Context, reqDto dto.RequestDeleteArticle) (*model.Article, error)
@@ -35,6 +38,20 @@ func NewArticleCommandPg(db *sqlx.DB, rabbitConn *amqp.Connection) ArticleComman
 		db:         db,
 		rabbitConn: rabbitConn,
 	}
+}
+
+func (c *articleCommandPg) PushToQueue(ctx context.Context, eventName string, article *model.Article) error {
+	emitter, err := event.NewEventEmitter(c.rabbitConn, "articles")
+	if err != nil {
+		return err
+	}
+
+	jsonPayload, err := json.Marshal(article)
+	if err != nil {
+		return err
+	}
+
+	return emitter.Push(eventName, jsonPayload)
 }
 
 func (c *articleCommandPg) findByUuid(ctx context.Context, uuid string) (*model.Article, error) {
@@ -97,9 +114,18 @@ func (c *articleCommandPg) Store(ctx context.Context, reqDto dto.RequestStoreArt
 
 	tx.Commit()
 
-	// TODO: publish event
+	article, err := c.findByUuid(ctx, values["uuid"].(string))
+	if err != nil {
+		return nil, err
+	}
 
-	return c.findByUuid(ctx, values["uuid"].(string))
+	// Push
+	err = c.PushToQueue(ctx, articleCreatedEvent, article)
+	if err != nil {
+		return nil, err
+	}
+
+	return article, nil
 }
 
 func (c *articleCommandPg) Update(ctx context.Context, reqDto dto.RequestUpdateArticle) (*model.Article, error) {
@@ -140,9 +166,19 @@ func (c *articleCommandPg) Update(ctx context.Context, reqDto dto.RequestUpdateA
 	}
 
 	tx.Commit()
-	// TODO: publish event
 
-	return c.findByUuid(ctx, reqDto.Uuid)
+	article, err := c.findByUuid(ctx, reqDto.Uuid)
+	if err != nil {
+		return nil, err
+	}
+
+	// Push
+	err = c.PushToQueue(ctx, articleUpdatedEvent, article)
+	if err != nil {
+		return nil, err
+	}
+
+	return article, nil
 }
 
 func (c *articleCommandPg) Delete(ctx context.Context, reqDto dto.RequestDeleteArticle) (*model.Article, error) {
@@ -181,7 +217,11 @@ func (c *articleCommandPg) Delete(ctx context.Context, reqDto dto.RequestDeleteA
 
 	tx.Commit()
 
-	// TODO: publish event
+	// Push
+	err = c.PushToQueue(ctx, articleDeletedEvent, article)
+	if err != nil {
+		return nil, err
+	}
 
 	return article, nil
 }

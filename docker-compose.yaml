@@ -61,9 +61,10 @@ services:
     volumes:
       - ./data/tmp/mongo/:/data/db/
   rabbitmq:
-    image: 'rabbitmq:3.9-alpine'
+    image: 'rabbitmq:3.9-management'
     ports:
-      - "5672:5672"
+      - 5672:5672     # amqp
+      - 15672:15672   # management
     deploy:
       mode: replicated
       replicas: 1
