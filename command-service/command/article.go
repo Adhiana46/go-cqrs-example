@@ -3,6 +3,7 @@ package command
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"time"
 
 	"github.com/Adhiana46/command-service/dto"
@@ -10,15 +11,16 @@ import (
 	"github.com/Adhiana46/command-service/model"
 	sq "github.com/Masterminds/squirrel"
 	"github.com/go-playground/validator/v10"
+	"github.com/go-redis/redis/v9"
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 const (
-	articleCreatedEvent = ""
-	articleUpdatedEvent = ""
-	articleDeletedEvent = ""
+	articleCreatedEvent = "article.created"
+	articleUpdatedEvent = "article.updated"
+	articleDeletedEvent = "article.deleted"
 )
 
 type ArticleCommand interface {
@@ -31,12 +33,14 @@ type ArticleCommand interface {
 type articleCommandPg struct {
 	db         *sqlx.DB
 	rabbitConn *amqp.Connection
+	rds        *redis.Client
 }
 
-func NewArticleCommandPg(db *sqlx.DB, rabbitConn *amqp.Connection) ArticleCommand {
+func NewArticleCommandPg(db *sqlx.DB, rabbitConn *amqp.Connection, rds *redis.Client) ArticleCommand {
 	return &articleCommandPg{
 		db:         db,
 		rabbitConn: rabbitConn,
+		rds:        rds,
 	}
 }
 
@@ -49,6 +53,17 @@ func (c *articleCommandPg) PushToQueue(ctx context.Context, eventName string, ar
 	jsonPayload, err := json.Marshal(article)
 	if err != nil {
 		return err
+	}
+
+	// Redis
+	cacheKey := fmt.Sprintf("article-%s", article.Uuid)
+	switch eventName {
+	case articleCreatedEvent:
+		c.rds.Set(ctx, cacheKey, article, 10*time.Minute)
+	case articleUpdatedEvent:
+		c.rds.Set(ctx, cacheKey, article, 10*time.Minute)
+	case articleDeletedEvent:
+		c.rds.Del(ctx, cacheKey)
 	}
 
 	return emitter.Push(eventName, jsonPayload)

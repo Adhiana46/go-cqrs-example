@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/Adhiana46/command-service/command"
+	"github.com/go-redis/redis/v9"
 	_ "github.com/jackc/pgx/stdlib"
 	"github.com/jmoiron/sqlx"
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -26,6 +27,7 @@ type Config struct {
 
 	DB         *sqlx.DB
 	rabbitConn *amqp.Connection
+	rds        *redis.Client
 
 	cmdArticle command.ArticleCommand
 }
@@ -50,6 +52,13 @@ func main() {
 	}
 	defer app.closeRabbitmq()
 
+	// open redis
+	err = app.openRedis()
+	if err != nil {
+		log.Panicf("Can't open Redis connection: %s", err)
+	}
+	defer app.closeRedis()
+
 	app.registerCommand()
 
 	log.Printf("Starting %s service on port %s\n", appName, port)
@@ -66,7 +75,7 @@ func main() {
 }
 
 func (app *Config) registerCommand() {
-	app.cmdArticle = command.NewArticleCommandPg(app.DB, app.rabbitConn)
+	app.cmdArticle = command.NewArticleCommandPg(app.DB, app.rabbitConn, app.rds)
 }
 
 // Postgresql
@@ -168,4 +177,20 @@ func (app *Config) openRabbitmq() error {
 
 func (app *Config) closeRabbitmq() {
 	app.rabbitConn.Close()
+}
+
+// Redis
+func (app *Config) openRedis() error {
+	app.rds = redis.NewClient(&redis.Options{
+		Addr:        fmt.Sprintf("%v:%v", os.Getenv("REDIS_HOST"), os.Getenv("REDIS_PORT")),
+		Password:    os.Getenv("REDIS_PASSWORD"),
+		DB:          0, // use default DB
+		ReadTimeout: -1,
+	})
+
+	return nil
+}
+
+func (app *Config) closeRedis() {
+	app.rds.Close()
 }

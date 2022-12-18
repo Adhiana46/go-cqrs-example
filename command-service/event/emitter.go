@@ -28,7 +28,7 @@ func (e *Emitter) Push(eventName string, data []byte) error {
 	}
 	defer ch.Close()
 
-	log.Println("Push to channel", e.topicName, eventName, data)
+	log.Println("Push to channel", e.topicName, eventName)
 
 	err = ch.Publish(
 		e.topicName,
