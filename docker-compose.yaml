@@ -1,0 +1,80 @@
+version: "3.9"
+
+services:
+  rest-gateway:
+    build:
+      context: ./rest-gateway
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+  command-service:
+    build:
+      context: ./command-service
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8001:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+  query-service:
+    build:
+      context: ./query-service
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8002:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+
+  postgres:
+    image: 'postgres:14.2'
+    ports:
+      - "5432:5432"
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: articles
+    volumes:
+      - ./data/tmp/postgres/:/var/lib/postgresql/data/
+      - ./data/initdb.sql:/docker-entrypoint-initdb.d/docker_initdb.sql
+  mongo:
+    image: 'mongo:4.2.16-bionic'
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: articles
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./data/tmp/mongo/:/data/db/
+  rabbitmq:
+    image: 'rabbitmq:3.9-alpine'
+    ports:
+      - "5672:5672"
+    deploy:
+      mode: replicated
+      replicas: 1
+    volumes:
+      - ./data/tmp/rabbitmq/:/var/lib/rabbitmq/
+  redis:
+    container_name: redis
+    image: redis:7.0.5-alpine
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/tmp/redis:/data
+
+
+# volumes:
