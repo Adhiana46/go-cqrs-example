@@ -1,10 +1,13 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"errors"
 	"io"
 	"net/http"
+
+	"github.com/go-playground/validator/v10"
 )
 
 type jsonResponse struct {
@@ -56,6 +59,17 @@ func (app *Config) writeJSON(w http.ResponseWriter, status int, data any, header
 
 func (app *Config) errorJSON(w http.ResponseWriter, err error, status ...int) error {
 	statusCode := http.StatusBadRequest
+
+	if err == sql.ErrNoRows {
+		statusCode = 404
+	} else {
+		switch err.(type) {
+		case validator.ValidationErrors:
+			statusCode = 400
+		default:
+			statusCode = 500
+		}
+	}
 
 	if len(status) > 0 {
 		statusCode = status[0]

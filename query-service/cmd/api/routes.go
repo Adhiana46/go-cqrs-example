@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -22,7 +23,14 @@ func (app *Config) routes() http.Handler {
 
 	mux.Use(middleware.Heartbeat("/ping"))
 
-	mux.Get("/", app.WelcomeHandler)
+	mux.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		payload := jsonResponse{
+			Error:   false,
+			Message: fmt.Sprintf("Welcome to %s version %s", app.AppName, app.AppVersion),
+		}
+
+		_ = app.writeJSON(w, http.StatusOK, payload)
+	})
 
 	return mux
 }
