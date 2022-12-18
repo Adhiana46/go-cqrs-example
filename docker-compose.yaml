@@ -21,6 +21,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    env_file:
+      - ./data/.env.local
   query-service:
     build:
       context: ./query-service
