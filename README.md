@@ -1,3 +1,8 @@
+## Run
+```
+docker compose up -d
+```
+
 ## TODO
 
  - [ ] Better Error handling
