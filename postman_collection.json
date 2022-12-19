@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "1a1b260c-681d-4c5a-91c6-8a4f0e99bdac",
+		"name": "Lamaran - Alpha Indo Soft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "380150"
+	},
+	"item": [
+		{
+			"name": "Create Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Adhiana Mastur\",\r\n    \"title\": \"Ini Title Artikle\",\r\n    \"body\": \"Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum.Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/articles/aa423ba7-479f-4202-8367-348827a88954",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"aa423ba7-479f-4202-8367-348827a88954"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Adhiana Mastur [edited]\",\r\n    \"title\": \"Ini Title Artikle [edited]\",\r\n    \"body\": \"[edited] Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum.Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum. Esse id consequat sint adipisicing. Magna tempor aliquip excepteur consequat aliquip cillum id tempor excepteur ad sunt duis. Incididunt tempor commodo tempor eu minim fugiat eu. Qui deserunt minim consectetur incididunt ipsum nostrud minim sit voluptate fugiat reprehenderit. Laboris duis excepteur labore irure Lorem anim Lorem id commodo sint adipisicing qui.Consequat tempor sit sunt ut velit reprehenderit amet quis adipisicing. Anim enim reprehenderit do ea ex amet voluptate ex ex ad culpa laboris adipisicing anim. Veniam dolore incididunt non eu pariatur tempor consectetur aliquip. Officia voluptate veniam nisi fugiat voluptate sunt anim. Laboris sint enim non aute mollit labore qui sit dolor voluptate do duis. Elit cupidatat aute nisi cupidatat quis labore dolore pariatur ipsum Lorem. Et eu aute magna laborum nulla. Incididunt occaecat esse exercitation reprehenderit dolore cupidatat sint irure. Veniam nulla labore nostrud qui nisi ipsum minim. Sit adipisicing aliquip mollit officia deserunt consequat eu est dolore fugiat Lorem ipsum.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/articles/aa423ba7-479f-4202-8367-348827a88954",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"aa423ba7-479f-4202-8367-348827a88954"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/articles/2a9619ca-71f8-4c5d-afc7-a4115e926917",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"2a9619ca-71f8-4c5d-afc7-a4115e926917"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List of Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{base_url}}",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}

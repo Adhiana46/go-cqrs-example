@@ -11,6 +11,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    env_file:
+      - ./data/.env.local
   command-service:
     build:
       context: ./command-service
