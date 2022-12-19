@@ -30,10 +30,10 @@ func (app *Config) listenEvents(topic string, events []string) {
 func (app *Config) handleEvent(msg *amqp.Delivery) {
 	switch msg.RoutingKey {
 	case articleCreatedEvent:
-		log.Println("Article Created")
+		app.handleArticleCreated(msg)
 	case articleUpdatedEvent:
-		log.Println("Article Updated")
+		app.handleArticleUpdated(msg)
 	case articleDeletedEvent:
-		log.Println("Article Deleted")
+		app.handleArticleDeleted(msg)
 	}
 }

@@ -32,5 +32,10 @@ func (app *Config) routes() http.Handler {
 		_ = app.writeJSON(w, http.StatusOK, payload)
 	})
 
+	mux.Route("/articles", func(r chi.Router) {
+		r.Get("/", app.GetArticlesHandler)
+		r.Get("/{uuid}", app.GetSingleArticleHandler)
+	})
+
 	return mux
 }
